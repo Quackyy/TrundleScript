@@ -1,4 +1,4 @@
-local ver = 1
+local ver = 3
 function AutoUpdate(data)
     if tonumber(data) > tonumber(ver) then
         PrintChat("New version found! " .. data)
