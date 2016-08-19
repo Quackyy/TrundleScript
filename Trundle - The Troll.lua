@@ -11,7 +11,32 @@ end
 GetWebResultAsync("https://raw.githubusercontent.com/Quackyy/TrundleScript/master/Trundle%20-%20The%20Troll.version", AutoUpdate)
   
   local movePos = GetPrediction(GetCurrentTarget(),{delay = 0.5, speed = math.huge, width = 50, range = math.huge}).castPos
+  local EStats = { delay = 0.025, speed = math.huge, width = 225, range = 1000}
   
+function Mode()
+    if _G.IOW_Loaded and IOW:Mode() then
+        return IOW:Mode()
+        elseif _G.PW_Loaded and PW:Mode() then
+        return PW:Mode()
+        elseif _G.DAC_Loaded and DAC:Mode() then
+        return DAC:Mode()
+        elseif _G.AutoCarry_Loaded and DACR:Mode() then
+        return DACR:Mode()
+        elseif _G.SLW_Loaded and SLW:Mode() then
+        return SLW:Mode()
+        elseif _G.GoSWalkLoaded and _G.GoSWalk.CurrentMode == 0 then
+        return "Combo"
+        elseif _G.GoSWalkLoaded and _G.GoSWalk.CurrentMode == 1 then
+        return "Harass"
+        elseif _G.GoSWalkLoaded and _G.GoSWalk.CurrentMode == 2 then
+        return "LaneClear"
+        elseif _G.GoSWalkLoaded and _G.GoSWalk.CurrentMode == 3 then
+        return "LastHit"
+        else
+        return ""
+    end
+end
+ 
   if Mode() == "Combo" then 
     if TrundleMenu.Gapclose.GCW:Value() and Ready(_W) and ValidTarget(target, 1000) then
       if GetDistance(myHero, target) > 340 and GetDistance(myHero, target) < 1000 and GetDistance(movePos) > GetDistance(target) then
