@@ -77,16 +77,9 @@ OnProcessSpellComplete(function(unit, spell)
   end
 end)
 
-skinMeta       = 
-{
-    ["Trundle"] = {"Classic", "Lil' Slugger", "Junkyard", "Traditional", "Constable"},
-}
-local Menu = MenuConfig(myHero.charName, myHero.charName.." Skin Changer")
-Menu:SubMenu("misc", "Misc Settings")
-Menu.misc:DropDown('skin', myHero.charName.. " Skins", 1, skinMeta[myHero.charName], 
-    function(model)
-        HeroSkinChanger(myHero, model - 1) print(skinMeta[myHero.charName][model] .." ".. myHero.charName .. " Loaded!") 
-    end,
-true)
+TrundleMenu:SubMenu("SkinChanger", "SkinChanger")
 
-print("Enjoy Your Free Skins ~Scortch")
+local skinMeta = {["Trundle"] = {"Classic", "Lil'Slugger", "Junkyard", "Traditional", "Constable"}}
+TrundleMenu.SkinChanger:DropDown('skin', myHero.charName.. " Skins", 1, skinMeta[myHero.charName], HeroSkinChanger, true)
+TrundleMenu.SkinChanger.skin.callback = function(model) HeroSkinChanger(myHero, model - 1) print(skinMeta[myHero.charName][model] .." ".. myHero.charName .. " Loaded!") end
+ 
