@@ -10,6 +10,8 @@ function AutoUpdate(data)
 end
 GetWebResultAsync("https://raw.githubusercontent.com/Quackyy/TrundleScript/master/Trundle%20-%20The%20Troll.version", AutoUpdate)
   
+  local movePos = GetPrediction(GetCurrentTarget(),{delay = 0.5, speed = math.huge, width = 50, range = math.huge}).castPos
+  
   if Mode() == "Combo" then 
     if TrundleMenu.Gapclose.GCW:Value() and Ready(_W) and ValidTarget(target, 1000) then
       if GetDistance(myHero, target) > 340 and GetDistance(myHero, target) < 1000 and GetDistance(movePos) > GetDistance(target) then
