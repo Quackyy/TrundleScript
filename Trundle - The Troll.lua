@@ -56,9 +56,6 @@ end
   end 
 end)
 
-GetWebResultAsync("https://raw.githubusercontent.com/Farscape2000/GOS/master/Versions/Better%20Skinchanger.version", AutoUpdate)
-
-if GetObjectName(myHero) ~= "Trundle" then return end
 OnProcessSpellComplete(function(unit, spell)
   if unit == myHero and spell.name:lower():find("attack") and IOW and IOW:Mode() == "Combo" then
     if IsReady(_Q) then
