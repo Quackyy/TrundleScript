@@ -1,6 +1,3 @@
-local ver = "3.0"
-
-function AutoUpdate(data)
     if tonumber(data) > tonumber(ver) then
         PrintChat("New version found! " .. data)
         PrintChat("Downloading update, please wait...")
@@ -9,6 +6,22 @@ function AutoUpdate(data)
         PrintChat("No updates found!")
     end
 end
+
+  if Mode() == "Combo" then 
+    if TrundleMenu.Gapclose.GCW:Value() and Ready(_W) and ValidTarget(target, 1000) then
+      if GetDistance(myHero, target) > 340 and GetDistance(myHero, target) < 1000 and GetDistance(movePos) > GetDistance(target) then
+        CastSkillShot(_W, target)
+      end 
+    end
+  
+    if TrundleMenu.Gapclose.GCE:Value() and Ready(_E) and ValidTarget(target, 1000) then
+      if GetDistance(myHero, target) > 360 and GetDistance(myHero, Target) < 800 and GetDistance(movePos) > GetDistance(target) then
+        local EPredE = GetCircularAOEPrediction(target, EStats)
+        CastSkillShot(_E, EPredE.castPos)
+      end
+    end   
+  end 
+end)
 
 GetWebResultAsync("https://raw.githubusercontent.com/Farscape2000/GOS/master/Versions/Better%20Skinchanger.version", AutoUpdate)
 
