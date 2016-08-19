@@ -1,11 +1,13 @@
+function AutoUpdate(data)
     if tonumber(data) > tonumber(ver) then
         PrintChat("New version found! " .. data)
         PrintChat("Downloading update, please wait...")
-        DownloadFileAsync("https://raw.githubusercontent.com/Farscape2000/GOS/master/Better%20SkinChanger.lua", SCRIPT_PATH .. "Better SkinChanger.lua", function() PrintChat("Update Complete, please 2x F6!") return end)
+        DownloadFileAsync("https://raw.githubusercontent.com/Quackyy/TrundleScript/master/Trundle%20-%20The%20Troll.lua", SCRIPT_PATH .. "Trundle - The Troll.lua", function() PrintChat("Update Complete, please 2x F6!") return end)
     else
         PrintChat("No updates found!")
     end
 end
+GetWebResultAsync("https://raw.githubusercontent.com/Quackyy/TrundleScript/master/Trundle%20-%20The%20Troll.version", AutoUpdate)
 
   if Mode() == "Combo" then 
     if TrundleMenu.Gapclose.GCW:Value() and Ready(_W) and ValidTarget(target, 1000) then
