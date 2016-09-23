@@ -14,7 +14,7 @@ end
   local movePos = GetPrediction(GetCurrentTarget(),{delay = 0.5, speed = math.huge, width = 50, range = math.huge}).castPos
   local EStats = { delay = 0.025, speed = math.huge, width = 225, range = 1000}
   
-local TrundleMenu = Menu("Trundle", "Trundle")
+local TrundleMenu = Menu("Trundlenation", "Trundlenation")
 TrundleMenu:SubMenu("Gapclose", "Gapclose")
 TrundleMenu.Gapclose:Boolean("GCW", "Use W", true)
 TrundleMenu.Gapclose:Boolean("GCE", "Use E", true)
