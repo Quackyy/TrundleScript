@@ -14,7 +14,7 @@ end
 
     local EStats = { delay = 0.025, speed = math.huge, width = 225, range = 1000}
     
-    local TrundleMenu = Menu("Trundlenation", "Trundlenation")
+    local TrundleMenu = Menu("TrundleNation", "TrundleNation")
 TrundleMenu:SubMenu("Gapclose", "Gapclose")
 TrundleMenu.Gapclose:Boolean("GCW", "Use W", true)
 TrundleMenu.Gapclose:Boolean("GCE", "Use E", true)
