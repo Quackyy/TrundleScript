@@ -45,6 +45,7 @@ end
  
   OnTick(function()
   
+    local target = GetCurrentTarget()
     local movePos = GetPrediction(GetCurrentTarget(),{delay = 0.5, speed = math.huge, width = 50, range = math.huge}).castPos
   
   if Mode() == "Combo" then 
