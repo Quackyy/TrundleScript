@@ -11,7 +11,7 @@ function AutoUpdate(data)
     end
 end
 
-  local movePos = GetPrediction(GetCurrentTarget(),{delay = 0.5, speed = math.huge, width = 50, range = math.huge}).castPos
+  --local movePos = GetPrediction(GetCurrentTarget(),{delay = 0.5, speed = math.huge, width = 50, range = math.huge}).castPos
   local EStats = { delay = 0.025, speed = math.huge, width = 225, range = 1000}
   
 local TrundleMenu = Menu("Trundlenation", "Trundlenation")
